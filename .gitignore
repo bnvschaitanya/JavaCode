@@ -2,6 +2,8 @@
 JavaLearning.iml
 *External Libraries
 *.class
+*.html
+*.js
 
 ### IntelliJ IDEA ###
 out/
