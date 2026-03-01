@@ -4,7 +4,7 @@ JavaLearning.iml
 *.class
 *.html
 *.js
-
+*.txt
 ### IntelliJ IDEA ###
 out/
 !**/src/main/**/out/
