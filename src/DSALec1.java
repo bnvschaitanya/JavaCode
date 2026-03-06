@@ -1,4 +1,60 @@
 import java.util.*;
+class Recursion{
+    public void forwardSquence(int n){
+        if(n==0){
+            System.out.println();
+            return;
+        }
+        System.out.print(n+" ");
+        forwardSquence(n-1);
+    }
+    public void backwardSquence(int n){
+        if(n==0){
+            return;
+        }
+        backwardSquence(n-1);
+        System.out.print(n+" ");
+    }
+    public int sumSquence(int n){
+        if(n==0){
+            return 0;
+        }
+        return n + sumSquence(n-1);
+    }
+    public int factorial(int n){
+        if(n==1){
+            return 1;
+        }
+        return n*factorial(n-1);
+    }
+    public int fibonacci(int n){
+        if(n == 0 || n == 1){
+            return n;
+        }
+        return fibonacci(n-1) + fibonacci(n-2);
+    }
+}
+class Hashing{
+    void displayFrequency(){
+        Scanner sc = new Scanner(System.in);
+        System.out.print("Enter the String:");
+        String str = sc.next();
+        int[] hash = new int[26];
+        for(char ch : str.toCharArray()){
+            hash[ch - 'a']++;
+        }
+        while(true){
+            try {
+                int index = sc.next().charAt(0) - 'a';
+                System.out.println("Frequency: " + hash[index]);
+            }
+            catch (Exception e){
+                System.out.println("Invalid Input");
+                break;
+            }
+        }
+    }
+}
 public class DSALec1 {
     public int countDigits(int num){
         int count = 0;
@@ -55,9 +111,20 @@ public class DSALec1 {
         return;
     }
     public static void main(String[] args){
+        Recursion r =  new Recursion();
+        Hashing h = new Hashing();
+        h.displayFrequency();
+        r.forwardSquence(10);
+        r.backwardSquence(10);
+        System.out.println("\nThe sum of 100 natural Numbers using Recurrsion: " + r.sumSquence(100));
+        System.out.println("The factorial value of 5 is " + r.factorial(5));
+        for(int i =0;i<15;i++){
+            System.out.print(r.fibonacci(i) + ",");
+        }
+        System.out.println();
         DSALec1 dsa = new DSALec1();
         System.out.println("The count of digits: " + dsa.countDigits(15432));
-        System.out.println("The reverse of the number 15432 is" + dsa.reverseNum(15432));
+        System.out.println("The reverse of the number 15432 is " + dsa.reverseNum(15432));
         dsa.checkPrime(15434);
         dsa.checkPalindrome(15434);
         dsa.checkPalindrome(15451);
